@@ -2,6 +2,7 @@
 > 参考了 博客 - [Google Guice 系列教程](http://www.cnblogs.com/youngC/archive/2012/12/21/2828419.html?utm_source=tuicool&utm_medium=referral) 和 Github - [greengerong/guice-demo](https://github.com/greengerong/guice-demo)
 
 `Guice`是一个DI (依赖注入) 框架 ,和Spring的依赖注入基本相同
+
 * 轻量级 ,启动迅速
 * 使用比较简单
 
@@ -10,7 +11,9 @@
 * 只有依赖注入的功能 ,如果是企业级的程序 ,需要整合其他资源 ,Spring的生态圈还是好很多的
 
 ## 开始
+
 * 引入依赖`@Inject` ,同Spring `@Autowired`
+
 ```java
 public class MessageServiceImpl implements MessageService {
    
@@ -28,6 +31,7 @@ public class MessageServiceImpl implements MessageService {
 ```
 
 * 注入对象 `@Provide` ,同Spring `@Bean` ; 同时会将方法中包含的其他对象注入(nameService1,nameService2)
+
 ```java
 @Provides
 public List<BookService> getAllItemServices(@Named("book1") BookService nameService1, @Named("book2") BookService nameService2) {
@@ -36,6 +40,7 @@ public List<BookService> getAllItemServices(@Named("book1") BookService nameServ
 ```
 
 * 依赖管理 `AbstractModule` ,Spring是通过扫描注解 ,Guice则是按照模块手动控制
+
 ```java
 /**
  * Message模块 依赖管理
@@ -66,6 +71,7 @@ public class MessageModule extends AbstractModule {
 ```
 
 * 多实现
+
 ```java
 /**
  * User模块 依赖管理
@@ -100,6 +106,7 @@ public class UserModule extends AbstractModule {
 ```
 
 ## 使用
+
 ```java
 public class AppBindTest {
 
