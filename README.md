@@ -1,4 +1,5 @@
 ## Guice简单使用
+> 参考了 博客 - [Google Guice 系列教程](http://www.cnblogs.com/youngC/archive/2012/12/21/2828419.html?utm_source=tuicool&utm_medium=referral) 和 Github - [greengerong/guice-demo](https://github.com/greengerong/guice-demo)
 
 `Guice`是一个DI (依赖注入) 框架 ,和Spring的依赖注入基本相同
 * 轻量级 ,启动迅速
