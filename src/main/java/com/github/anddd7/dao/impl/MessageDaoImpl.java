@@ -2,13 +2,10 @@ package com.github.anddd7.dao.impl;
 
 import com.github.anddd7.dao.MessageDao;
 import com.github.anddd7.domain.Message;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
-
+@Slf4j
 public class MessageDaoImpl implements MessageDao {
-    private static final Logger log = LoggerFactory.getLogger(MessageDaoImpl.class);
-
     public void sendMessage(Message msg) {
         log.debug("收到消息{}", msg.toString());
     }

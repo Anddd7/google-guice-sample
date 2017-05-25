@@ -14,6 +14,7 @@ import com.github.anddd7.service.impl.MessageServiceImpl;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Key;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,9 +28,8 @@ import java.util.Set;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.core.Is.is;
 
+@Slf4j
 public class AppBindTest {
-
-    private static final Logger log = LoggerFactory.getLogger(AppBindTest.class);
 
     private Injector injector;
 
@@ -64,6 +64,7 @@ public class AppBindTest {
 
         Message receive = instance.receiveMessage();
         log.debug(receive.toString());
+
 
         Assert.assertThat(instance, is(instanceOf(MessageServiceImpl.class)));
     }
