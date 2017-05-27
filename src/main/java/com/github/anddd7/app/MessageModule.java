@@ -15,7 +15,6 @@ import static com.google.inject.Scopes.SINGLETON;
 
 /**
  * Message模块 依赖管理
- * 
  */
 
 public class MessageModule extends AbstractModule {
